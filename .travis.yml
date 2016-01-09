@@ -17,3 +17,19 @@ notifications:
 branches:
   only:
   - master
+addons:
+    code_climate:
+        repo_token:
+          secure: "\
+            ahlXoVc930gfwEe8klEe140DMTcUzS5+Dg6yQPWTUsNcGl8EKzbHGmXTutGtR4TIxi\
+            LSV/dr8nh09ab9N2cZ5P5eR/4zrKRK4a6emdzjc5CGnnKSoUowAO92wWSH/0YHlg8v\
+            2KF7d7yGOVaQrScvwnXJvCU/8hqDaUcDKzaVHg2HTaCpIENOAh4Gyvphlz4zgpKISw\
+            GjvzLzDzEHCNNjP/PI42a/ZLE7CR44uNzOYwQby/ZlYr2hPes4cJ5qs+MxV9NBrMgl\
+            /6D5jpbLl0Cawuv9Pnpt8XKuicfM9hFSJ0J1Mn9ovN6J7npDPnFeXh6f1lAst3MosQ\
+            iTIyM0aPhKI4y5FBO9Sg0n7+Pth6KYNNheyPaO/6Bb34wCfSapTdBi1x6Z/xzqw0aO\
+            ENjUwNaSBpYYi9a3RM2y67AUioYbpmNvt348btDvPp3IXyhaOG1PFOraVPwbVv5ebE\
+            JYM0r/3pc/7z4/GzzsZ1V+1p15WgzZlwKomOeRL2nthKL3e0bdIyJk8ebJrjxnpPbC\
+            4shvjNhnFFg790SBAMUUq34y3m/ir7s4KV+ouUbkoryFAEkYJEEcM/vg3ap6jTVIhG\
+            pHJ7IK7UVrjYNEzsOsxf9DW0UgVGqpPnfZR694TwvGo+4cBqlby//qAPGMMSiMhvqO\
+            caPChzW4Lkycarz5F4p6D8Y=\
+          "
