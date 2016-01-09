@@ -4,7 +4,7 @@
 
 require "support/coverage"
 require "luna/rspec/formatters/checks"
-require "support/helpers"
+require "rspec/helpers"
 require "simple/ansi"
 
 Dir[File.expand_path("../../support/**/*.rb", __FILE__)].each do |f|
