@@ -1,5 +1,5 @@
 # Frozen-string-literal: true
-# Copyright: 2015-2016 Jordon Bedwell - Apache v2.0 License
+# Copyright: 2015-2016 Jordon Bedwell - MIT License
 # Encoding: utf-8
 
 module Simple
@@ -8,7 +8,7 @@ module Simple
 
     ANSI_MATCH = /#{format("%c", 27)}\[(?:\d+)(?:;\d+)*(j|k|m|s|u|A|B|G)|\e\(B\e\[m/ix.freeze
     # This tries to match the many types of Ansi's out there, there are more though.
-    
+
     COLORS = {
       :red => 31,
       :green => 32,
