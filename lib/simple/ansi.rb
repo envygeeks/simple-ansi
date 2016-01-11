@@ -6,9 +6,7 @@ module Simple
   module Ansi
     extend self
 
-    ANSI_MATCH = /#{format("%c", 27)}\[(?:\d+)(?:;\d+)*(j|k|m|s|u|A|B|G)|\e\(B\e\[m/ix.freeze
-    # This tries to match the many types of Ansi's out there, there are more though.
-
+    ANSI_MATCH = /\x1b.*?[jkmsuABGKH]/
     COLORS = {
       :red => 31,
       :green => 32,
@@ -29,7 +27,7 @@ module Simple
     #
 
     def clear
-      $stdout.print(format("%c[H%c[2J", 27, 27))
+      $stdout.print "\x1b[H\x1b[2J"
     end
 
     #
@@ -43,27 +41,26 @@ module Simple
     # way that Docker does them in an async way without breaking term.
 
     def jump(str, num)
-      format("%c[%dA%s%c[%dB", 27, num, \
-        clear_line(str), 27, num)
+      "\x1b[#{num}A#{clear_line(str)}\x1b[#{num}B"
     end
 
     #
 
     def reset(str = "")
-      "#{format("%c[0m", 27)}#{str}"
+      "\x1b[0m#{str}"
     end
 
     #
 
     def clear_line(str = "")
-      "#{format("%c[2K\r", 27)}#{str}\r"
+      "\x1b[2K\r#{str}\r"
     end
 
     #
 
     COLORS.each do |color, num|
       define_method color do |str|
-        "#{format("%c", 27)}[#{num}m#{str}#{reset}"
+        "\x1b[#{num}m#{str}#{reset}"
       end; module_function color
     end
   end
